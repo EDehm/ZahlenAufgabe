@@ -10,3 +10,4 @@ Das Repository enthält aktuell die folgenden Klassen:
 - Rational.java: eine Klasse für rationale Zahlen, realisiert als Bruch aus ganzen Zahlen. Abgeleitet von  Zahl.java.
 - App.java: kleines Beispiel mit den Grundrechenarten und Ausgaben zum Verifizieren.
 - RationalTest.java: JUnit-Test. Sie können diese Datei ignorieren, wenn Sie keine Unit-Tests durchführen möchten.
+- App2.java: Eine Klasse, die entsprechend der Nachfrage für Schritt 2 erstell wurde. Sie kürzt eingegebene Klassen mit Hilfe von Rational.java.
