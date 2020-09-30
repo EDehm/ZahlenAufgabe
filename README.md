@@ -11,3 +11,6 @@ Das Repository enthält aktuell die folgenden Klassen:
 - App.java: kleines Beispiel mit den Grundrechenarten und Ausgaben zum Verifizieren.
 - RationalTest.java: JUnit-Test. Sie können diese Datei ignorieren, wenn Sie keine Unit-Tests durchführen möchten.
 - App2.java: Eine Klasse, die entsprechend der Nachfrage für Schritt 2 erstell wurde. Sie kürzt eingegebene Klassen mit Hilfe von Rational.java.
+
+## Kommentare
+Es wurden Kommentare in den Klassne hinzugefügt für das Erzeugen einer Doxygen Dokumentation.
