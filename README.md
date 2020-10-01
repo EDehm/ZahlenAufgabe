@@ -13,4 +13,4 @@ Das Repository enthält aktuell die folgenden Klassen:
 - App2.java: Eine Klasse, die entsprechend der Nachfrage für Schritt 2 erstell wurde. Sie kürzt eingegebene Klassen mit Hilfe von Rational.java.
 
 ## Kommentare
-Es wurden Kommentare in den Klassen hinzugefügt für das Erzeugen einer Doxygen Dokumentation.
+Es wurden Kommentare in den Klassen hinzugefügt für das Erzeugen einer Doxygen Dokumentation, sowie die Konfigurationsdatei für Doxygen und die entsprechende Dokumentation.
