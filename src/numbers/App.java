@@ -1,5 +1,8 @@
 package numbers;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 /**
  * Eine Klasse mit Beispielen für Grundrechenarten und Ausgaben zum
  * Verifizieren.
@@ -8,6 +11,9 @@ package numbers;
 public class App {
 
 	public static void main(String[] args) {
+		
+		final Logger log = LoggerFactory.getLogger(App.class.getName());
+		log.info(">> App.main");
 
 		System.out.println("Einige Berechnungen mit der Klasse Rational");
 		System.out.println("Testen Sie Ihre Kenntnisse im Bruchrechnen!");
@@ -92,6 +98,8 @@ public class App {
 		System.out.println("\nDezimalbruch bilden");
 		b = new Rational(1, 3);
 		System.out.println("Der Dezimalbruch als double-Zahl zu " + b + " ist " + b.getDoubleWert());
+		
+		log.info("<< App.main");
 	}
 }
 

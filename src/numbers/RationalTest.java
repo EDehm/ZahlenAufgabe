@@ -6,8 +6,16 @@ package numbers;
 
 import static org.junit.Assert.*;
 import org.junit.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class RationalTest {
+	
+	public static void main(String[] args) {
+		final Logger log = LoggerFactory.getLogger(App.class.getName());
+		log.info(">> RationalTest.main");
+		log.info("<< RationalTest.main");
+	}
 
 	@Test
 	public void testAdd() {

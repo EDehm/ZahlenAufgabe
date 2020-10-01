@@ -7,7 +7,12 @@ package numbers;
 
 import java.util.Scanner;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public class Rational extends Zahl {
+
+	final Logger logger = LoggerFactory.getLogger(Rational.class.getName());
 
 	private int p;
 	private int q;
@@ -19,9 +24,11 @@ public class Rational extends Zahl {
 	 */
 
 	public Rational() {
+		logger.trace(">> Rational()");
 		this.p = 1;
 		this.q = 1;
-
+		logger.info("** Rationale Zahl mit dem Zähler {} und Nenner {}", p, q);
+		logger.trace("<< Rational()");
 	}
 
 	/**
@@ -32,8 +39,11 @@ public class Rational extends Zahl {
 	 */
 
 	public Rational(int z) {
+		logger.trace(">> Rational(int)");
 		this.p = z;
 		this.q = 1;
+		logger.info("** Rationale Zahl mit dem Zähler {} und Nenner {}", p, q);
+		logger.trace("<< Rational(int)");
 	}
 
 	/**
@@ -45,10 +55,13 @@ public class Rational extends Zahl {
 	 */
 
 	public Rational(int z, int n) {
+		logger.trace(">> Rational(int, int)");
 		this.p = z;
 		this.q = n;
 		assert (n != 0);
 		kuerzen();
+		logger.info("** Ungekürzte rationale Zahl mit dem Zähler {} und Nenner {}", p, q);
+		logger.trace("<< Rational(int, int)");
 	}
 
 	/**
@@ -107,25 +120,29 @@ public class Rational extends Zahl {
 	 */
 
 	public void add(Zahl z) {
+		logger.trace(">> add(Zahl)");
 		Rational local = (Rational) z;
 		p = p * local.q + local.p * q;
 		q = q * local.q;
 		kuerzen();
-
+		logger.info("** Ungekürzte addierte Zahl mit dem Zähler {} und Nenner {}", p, q);
+		logger.trace("<< add(Zahl)");
 	}
 
 	/**
 	 * Wandelt eine Integer Zahl in ein Objekt der Klasse Rational um und addiert
 	 * diese zum Objekt. Anschließend wird das ergebnis gekürzt.
 	 * 
-	 * \param[in] i der zu addierende Integer Wert. \param local der Integer Wert als
-	 * rationale Zahl.
+	 * \param[in] i der zu addierende Integer Wert. \param local der Integer Wert
+	 * als rationale Zahl.
 	 */
 
 	public void add(int i) {
+		logger.trace(">> add(int)");
 		Rational local = new Rational(i);
 		add(local);
 		kuerzen();
+		logger.trace("<< add(int)");
 	}
 
 	/**
@@ -138,24 +155,29 @@ public class Rational extends Zahl {
 	 */
 
 	public void sub(Zahl z) {
+		logger.trace(">> sub(Zahl)");
 		Rational local = (Rational) z;
 		p = p * local.q - local.p * q;
 		q = q * local.q;
 		kuerzen();
+		logger.info("** Ungekürzte subtrahierte Zahl mit dem Zähler {} und Nenner {}", p, q);
+		logger.trace("<< sub(Zahl)");
 	}
 
 	/**
 	 * Wandelt eine Integer Zahl in ein Objekt der Klasse Rational um und
 	 * subtrahiert diese vom Objekt. Anschließend wird das Ergebnis gekürzt.
 	 * 
-	 * \param[in] i der zu subtrahierende Integer Wert. \param local der Integer Wert
-	 * als rationale Zahl.
+	 * \param[in] i der zu subtrahierende Integer Wert. \param local der Integer
+	 * Wert als rationale Zahl.
 	 */
 
 	public void sub(int i) {
+		logger.trace(">> sub(int)");
 		Rational local = new Rational(i);
 		sub(local);
 		kuerzen();
+		logger.trace("<< sub(int)");
 	}
 
 	/**
@@ -163,30 +185,35 @@ public class Rational extends Zahl {
 	 * multipliziert diese dann mit dem Objekt. Anschließend wird das Ergebnis
 	 * gekürzt.
 	 * 
-	 * \param[in] z die zu multiplizierende Zahl. \param local die zu multiplizierende
-	 * Zahl als rationale Zahl. \param p der Zähler der Multiplikation. \param q der
-	 * Nenner der Multiplikation.
+	 * \param[in] z die zu multiplizierende Zahl. \param local die zu
+	 * multiplizierende Zahl als rationale Zahl. \param p der Zähler der
+	 * Multiplikation. \param q der Nenner der Multiplikation.
 	 */
 
 	public void mul(Zahl z) {
+		logger.trace(">> mul(Zahl)");
 		Rational local = (Rational) z;
 		p = p * local.p;
 		q = q * local.q;
 		kuerzen();
+		logger.info("** Ungekürzte multiplizierte Zahl mit dem Zähler {} und Nenner {}", p, q);
+		logger.trace("<< mul(Zahl)");
 	}
 
 	/**
 	 * Wandelt eine Integer Zahl in ein Objekt der Klasse Rational um und
 	 * multipliziert diese mit dem Objekt. Anschließend wird das Ergebnis gekürzt.
 	 * 
-	 * \param[in] i der zu subtrahierende Integer Wert. \param local der Integer Wert
-	 * als rationale Zahl.
+	 * \param[in] i der zu subtrahierende Integer Wert. \param local der Integer
+	 * Wert als rationale Zahl.
 	 */
 
 	public void mul(int i) {
+		logger.trace(">> mul(int)");
 		Rational local = new Rational(i);
 		mul(local);
 		kuerzen();
+		logger.trace("<< mul(int)");
 	}
 
 	/**
@@ -200,24 +227,29 @@ public class Rational extends Zahl {
 	 */
 
 	public void div(Zahl z) {
+		logger.trace(">> div(Zahl)");
 		Rational local = (Rational) z;
 		p = p * local.q;
 		q = q * local.p;
 		kuerzen();
+		logger.info("** Ungekürzte dividierte Zahl mit dem Zähler {} und Nenner {}", p, q);
+		logger.trace("<< div(Zahl)");
 	}
 
 	/**
 	 * Wandelt eine Integer Zahl in ein Objekt der Klasse Rational um und dividiert
 	 * das Objekt durch diese Zahl. Anschließend wird das Ergebnis gekürzt.
 	 * 
-	 * \param[in] i der Integer Wert, durch welchen das Objekt dividiert wird. \param
-	 * local der Integer Wert als rationale Zahl.
+	 * \param[in] i der Integer Wert, durch welchen das Objekt dividiert wird.
+	 * \param local der Integer Wert als rationale Zahl.
 	 */
 
 	public void div(int i) {
+		logger.trace(">> div(int)");
 		Rational local = new Rational(i);
 		div(local);
 		kuerzen();
+		logger.trace("<< div(int)");
 	}
 
 	/**
@@ -228,10 +260,13 @@ public class Rational extends Zahl {
 	 */
 
 	public void kehrwert() {
+		logger.trace(">> kehrwert()");
 		int temp = p;
 		p = q;
 		q = temp;
 		assert (q != 0);
+		logger.info("** Kehrwert der Zahl mit dem Zähler {} und Nenner {}", p, q);
+		logger.trace("<< kehrwert()");
 	}
 
 	/**
@@ -239,7 +274,10 @@ public class Rational extends Zahl {
 	 */
 
 	public void switchSign() {
+		logger.trace(">> switchSign()");
 		p = -p;
+		logger.info("** Neuer Wert Zähler {} mit umgekehrtem Vorzeichen.", p);
+		logger.trace("<< switchSign()");
 	}
 
 	/**
@@ -254,6 +292,7 @@ public class Rational extends Zahl {
 	 */
 
 	public void kuerzen() {
+		logger.trace(">> kuerzen()");
 		// Vorzeichen merken und Betrag bilden
 		int sign = 1;
 		if (p < 0) {
@@ -270,7 +309,9 @@ public class Rational extends Zahl {
 		// Vorzeichen restaurieren
 		p = sign * p / teiler;
 		q = q / teiler;
-
+		
+		logger.info("** Neuer gekürzter Wert mit dem Zähler {} und Nenner {}.", p, q);
+		logger.trace("<< kuerzen()");
 	}
 
 	/**
@@ -297,7 +338,6 @@ public class Rational extends Zahl {
 	 */
 
 	private int ggt(int x, int y) {
-
 		while (y > 0) {
 			int rest = x % y;
 			x = y;
@@ -311,7 +351,6 @@ public class Rational extends Zahl {
 	 */
 
 	public Rational add(Rational a, Rational b) {
-
 		a.add(b);
 		return a;
 
@@ -356,6 +395,8 @@ public class Rational extends Zahl {
 	 */
 
 	public void eingabe() {
+		logger.trace(">> eingabe()");
+
 		Scanner sc = new Scanner(System.in);
 
 		System.out.println("Geben Sie den Zaehler ein:");
@@ -372,6 +413,8 @@ public class Rational extends Zahl {
 		kuerzen();
 		print();
 
+		logger.info("** Ungekürzte Zahl mit dem Zähler {} und Nenner {}", p, q);
+		logger.trace("<< eingabe()");
 	}
 
 }

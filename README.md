@@ -14,3 +14,6 @@ Das Repository enthält aktuell die folgenden Klassen:
 
 ## Kommentare
 Es wurden Kommentare in den Klassen hinzugefügt für das Erzeugen einer Doxygen Dokumentation, sowie die Konfigurationsdatei für Doxygen und die entsprechende Dokumentation.
+
+## LOGBack
+Die Klassen wurde um Log-Ausgaben ergänzt. Außerdem wurde eine externe Konfigurationsdatei für LOGBack ergänzt.
