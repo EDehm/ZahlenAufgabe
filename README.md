@@ -17,3 +17,7 @@ Es wurden Kommentare in den Klassen hinzugefügt für das Erzeugen einer Doxygen
 
 ## LOGBack
 Die Klassen wurde um Log-Ausgaben ergänzt. Außerdem wurde eine externe Konfigurationsdatei für LOGBack ergänzt.
+
+## Maven
+Maven wurde als Build-Werkzeug umgesetzt und das Repository dementsprechend angepasst. Als Target wird eine Doxygen Dokumentation erzeugt.
+(Die Klasse RationalTest musste entfernt werden, da die Abhängigkeit von junit einen Fehler erzeugte und bisher keine Lösung gefunden wurde.)
