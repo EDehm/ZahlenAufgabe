@@ -25,5 +25,6 @@ jobs:
     - name: New release
       uses: actions/create-release@v1
       with:
-        tag: release5
-        token: ${{ secrets.GITHUB_TOKEN }}
+        tag_name: release5
+        release_name: release5
+        body: release5 with GitHub Actions 
